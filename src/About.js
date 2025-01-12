@@ -1,6 +1,10 @@
 function Aboutpage()
 {
-    return <h1>this is first page</h1>
+    return(
+        <section>
+            this is my template
+        </section>
+    )
 }
 export default Aboutpage
 
