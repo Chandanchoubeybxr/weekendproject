@@ -2,24 +2,28 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
-import "./style.css";
-import Xys from './About';
 
-import Mynav from './Mynavbar';
-import Mybootstrappage from './Mybootstrappage';
-import Reactbootstrappage from './Reactbootstrappage';
+import { BrowserRouter,Route,Routes } from 'react-router-dom';
+import Appmainpage from './modules/Appmainpage';
+import Studentloginpage from './modules/students/auth/Studentloginpage';
+
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <BrowserRouter>
+        <Routes>
+          <Route path='' element={<Appmainpage/>}></Route>
+          <Route path='students' element={<Studentloginpage/>}></Route>
 
-    {/* <Aboutpage></Aboutpage> */}
-    <Reactbootstrappage></Reactbootstrappage>
-    <Mynav></Mynav>
-    <Xys></Xys>
-    <h1>use of bootstrap</h1>
-    <Mybootstrappage></Mybootstrappage>
+
+        </Routes>
+    
+    </BrowserRouter>
+
 
   </React.StrictMode>
 );
