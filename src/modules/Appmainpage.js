@@ -16,7 +16,7 @@ function Appmainpage() {
                     </Link>
                 </div>
                 <div className='col-md-6 text-center'>
-                    <Link to='students' className='card'>
+                    <Link to='admin' className='card'>
                     <h1> <RiAdminFill/></h1>
                     <p>Admin Login</p>
                     
