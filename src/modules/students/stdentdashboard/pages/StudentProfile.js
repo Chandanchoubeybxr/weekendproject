@@ -2,7 +2,7 @@ import React from 'react'
 
 
 
-const a = 100;
+const a = 500;
 function StudentProfile() {
   if(a>=400)
   {
