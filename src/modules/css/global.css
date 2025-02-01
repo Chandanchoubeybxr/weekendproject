@@ -1,0 +1,17 @@
+.userloaderpage
+{
+    width:100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+    position: fixed;
+    display: flex;
+    align-items: center;
+    top:0;
+    justify-content: center;
+}
+.userloaderpage section
+{
+    padding:50px;
+    background-color: white;
+    text-align: center;
+}

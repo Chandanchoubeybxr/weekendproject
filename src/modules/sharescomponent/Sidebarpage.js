@@ -2,6 +2,7 @@ import React from 'react'
 import { IoHomeSharp } from "react-icons/io5";
 import { FaTachometerAlt } from "react-icons/fa";
 import propic from '../../images/img1.jpg';
+import { Link } from 'react-router-dom';
 
 function Sidebarpage() {
     return (
@@ -27,9 +28,22 @@ function Sidebarpage() {
                     </a>
                 </li>
                 <li>
-                    <a href="#" className="nav-link link-body-emphasis">
-                        Orders
-                    </a>
+                    <Link to="apidata" className="nav-link link-body-emphasis">Api Data</Link>
+                </li>
+                <li>
+                    <a href="#" className="nav-link link-body-emphasis">Orders</a>
+                </li>
+                <li>
+                    <a href="#" className="nav-link link-body-emphasis">Orders</a>
+                </li>
+                <li>
+                    <a href="#" className="nav-link link-body-emphasis">Orders</a>
+                </li>
+                <li>
+                    <a href="#" className="nav-link link-body-emphasis">Orders</a>
+                </li>
+                <li>
+                    <a href="#" className="nav-link link-body-emphasis">Orders</a>
                 </li>
             </ul>
 

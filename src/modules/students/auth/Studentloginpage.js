@@ -1,64 +1,87 @@
-import React,{useState} from 'react';
-import { Link } from 'react-router-dom';
+import React, { Fragment, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 
 function Studentloginpage() {
-const [sv,sf]=useState("defautvalue");
-  const xyz = ()=>
-  {
-    sf("ooooooooooo");
+  const customnav = useNavigate()
+  const [loaderpage, updateloaderpage] = useState("none");
+  const [loginpage, updatelogin] = useState({
+    email: "",
+    password: ""
+  })
+
+  const stateupdate = (e) => {
+    const { name, value } = e.target;
+    updatelogin((attr) => {
+      return {
+        ...attr,
+        [name]: value
+      }
+    })
+
   }
 
-  const updateinput = (e)=>{
-    console.log(e.target.value);
-    sf(e.target.value);
+
+  const myloginpage = () => {
+    console.log(loginpage);
+    if (loginpage.email === "" || loginpage.password === "") {
+      alert("wrong");
+    }
+    else {
+      alert("wecome to dashboard");
+      updateloaderpage("flex");
+      setTimeout(()=>{
+        updateloaderpage("none");
+        customnav('dashboard');
+      },2000)
+
+    }
 
   }
 
-const [a,b]=useState(90)
-const fontsizechange=(p)=>{
-    b(parseInt(p.target.value));
-}
 
-const w = "warn";
+
 
   return (
-    <div className='container '>
-      <div className='row justify-content-center'>
-        <div className='col-md-6 shadow p-5'>
-          <div className='container-fluid'>
-            <div className='row'>
-              <div className='col-md-12'>
-                <div className="mb-3">
-                  <label className="form-label">Email address</label>
-                  <input type="email" className="form-control" value={sv} onInput={updateinput}/>
-                  {sv}
-                  <p>{sv.length>=10 ?  <span className="text-success bg-dark">success</span> : sv.length>=5 ? <span className="text-warning bg-dark">warning</span> : "minimum length 5 char"}</p>
-                  <h1 style={{color:'red',backgroundColor:'lightgray',fontSize:a}}>{sv}</h1>
-                  <input type='number' onInput={fontsizechange}/>
-
-                  <h2 className={w==="warning" ? "text-warning" : "text-danger"}>apply condition base class</h2>
-
+    <Fragment>
+      <div className='container '>
+        <div className='row justify-content-center'>
+          <div className='col-md-6 shadow p-5'>
+            <div className='container-fluid'>
+              <div className='row'>
+                <div className='col-md-12'>
+                  <div className="mb-3">
+                    <label className="form-label">Email address</label>
+                    <input type="email" className="form-control" name='email' value={loginpage.email} onInput={stateupdate} />
+                  </div>
                 </div>
-              </div>
-              <div className='col-md-12'>
-                <div className="mb-3">
-                  <label className="form-label">Password</label>
-                  <input type="password" className="form-control" />
+                <div className='col-md-12'>
+                  <div className="mb-3">
+                    <label className="form-label">Password</label>
+                    <input type="password" className="form-control" name='password' value={loginpage.password} onInput={stateupdate} />
+                  </div>
                 </div>
-              </div>
-              <div className='col-md-12 text-end'>
-                <div className="mb-3">
-                  <button className='btn btn-success' onClick={xyz}> Login</button>
-                  <Link to="dashboard" className="btn btn-warning ms-3">Fake login</Link>
+                <div className='col-md-12 text-end'>
+                  <div className="mb-3">
+                    <button className='btn btn-success' onClick={myloginpage}> Login</button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
 
+          </div>
         </div>
       </div>
-    </div>
+
+      <div className='userloaderpage' style={{display:`${loaderpage}`}}>
+        <section>
+          <div className="d-flex align-items-center">
+            <strong role="status">Loading...</strong>
+            <div className="spinner-border ms-auto"></div>
+          </div>
+        </section>
+      </div>
+    </Fragment>
   )
 }
 
