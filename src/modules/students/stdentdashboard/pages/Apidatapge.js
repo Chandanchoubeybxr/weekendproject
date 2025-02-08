@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import axios from 'axios';
+import { Link } from 'react-router-dom';
 
 function Apidatapge() {
   const [searchby, setsearchby] = useState([])
@@ -16,21 +17,29 @@ function Apidatapge() {
   useEffect(() => {
     apifunc();
   }, []);
-
+  const [df,sdf]=useState("");
   const [x, y] = useState([]);
   const searchByfunc = (e) => {
     const t = e.target.value;
+    sdf(t);
     const a = card.map((d) => {
       return d[t]
     })
-
     y([...new Set(a)]);
 
   }
 
   const [filterdata,setfilter]=useState("")
     const myfilter = (e)=>{
-        setfilter(e.target.value);
+       const a = e.target.value;
+       console.log(a);
+        const abc = card.filter((d)=>{
+            return d[df]===a
+        })
+        console.log(abc);
+        setfilter(abc);
+        
+
     }
 
 
@@ -66,8 +75,7 @@ function Apidatapge() {
 
         <div className='row'>
 
-          {filterdata}
-          {card.map((d) => {
+          {filterdata.length<=0 ? card.map((d)=>{
             return (
               <div className='col-md-3 mt-2' key={d.id} >
                 <div className='card'>
@@ -75,10 +83,26 @@ function Apidatapge() {
                   <h2>Product Name</h2>
                   <p className="price">{d.price}</p>
                   <p className='title'>{d.title}</p>
-                  <button>Buy Now</button>
+                  <Link className="btn btn-info" to={'productdetails/'+d.id}>View Details</Link>
                 </div>
               </div>)
-          })}
+
+          }):
+          filterdata.map((d) => {
+            return (
+              <div className='col-md-3 mt-2' key={d.id} >
+                <div className='card'>
+                  <img src={d.images[0]} alt="Product Image" style={{ height: 200 }} />
+                  <h2>Product Name</h2>
+                  <p className="price">{d.price}</p>
+                  <p className='title'>{d.title}</p>
+                  <Link className="btn btn-info" to={'productdetails/'+d.id}>View Details</Link>
+                </div>
+              </div>)
+          })
+          
+          }
+         
 
         </div>
       </div>

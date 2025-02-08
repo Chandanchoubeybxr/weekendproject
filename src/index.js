@@ -12,6 +12,7 @@ import Studentmainpage from './modules/students/stdentdashboard/Studentmainpage'
 import Studentmasterpage from './modules/students/stdentdashboard/Studentmasterpage';
 import StudentProfile from './modules/students/stdentdashboard/pages/StudentProfile';
 import Apidatapge from './modules/students/stdentdashboard/pages/Apidatapge';
+import Productdetailspage from './modules/students/stdentdashboard/pages/Productdetailspage';
 
 
 
@@ -28,6 +29,7 @@ root.render(
           <Route path='dashboard' element={<Studentmainpage />}>
             <Route path='' element={<StudentProfile />}></Route>
             <Route path='apidata' element={<Apidatapge />}></Route>
+            <Route path='apidata/productdetails/:id' element={<Productdetailspage/>}></Route>
             <Route path='*' element={<Errorpage />}></Route>
           </Route>
           <Route path='*' element={<Errorpage />}></Route>
