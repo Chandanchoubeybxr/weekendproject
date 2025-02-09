@@ -17,6 +17,7 @@ function Apidatapge() {
   useEffect(() => {
     apifunc();
   }, []);
+  
   const [df,sdf]=useState("");
   const [x, y] = useState([]);
   const searchByfunc = (e) => {

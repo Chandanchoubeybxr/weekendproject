@@ -13,6 +13,7 @@ import Studentmasterpage from './modules/students/stdentdashboard/Studentmasterp
 import StudentProfile from './modules/students/stdentdashboard/pages/StudentProfile';
 import Apidatapge from './modules/students/stdentdashboard/pages/Apidatapge';
 import Productdetailspage from './modules/students/stdentdashboard/pages/Productdetailspage';
+import Chartspage from './modules/students/stdentdashboard/pages/Chartspage';
 
 
 
@@ -30,6 +31,7 @@ root.render(
             <Route path='' element={<StudentProfile />}></Route>
             <Route path='apidata' element={<Apidatapge />}></Route>
             <Route path='apidata/productdetails/:id' element={<Productdetailspage/>}></Route>
+            <Route path='graph' element={<Chartspage />}></Route>
             <Route path='*' element={<Errorpage />}></Route>
           </Route>
           <Route path='*' element={<Errorpage />}></Route>

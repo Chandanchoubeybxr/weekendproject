@@ -31,7 +31,7 @@ function Sidebarpage() {
                     <Link to="apidata" className="nav-link link-body-emphasis">Api Data</Link>
                 </li>
                 <li>
-                    <a href="#" className="nav-link link-body-emphasis">Orders</a>
+                <Link to="graph" className="nav-link link-body-emphasis">Graph Page</Link>
                 </li>
                 <li>
                     <a href="#" className="nav-link link-body-emphasis">Orders</a>

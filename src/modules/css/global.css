@@ -62,3 +62,18 @@
 {
     height: 60px;
 }
+
+.customgraph
+{
+    list-style-type: none;
+}
+.customgraph li
+{
+    background-color: #27ae60;
+    margin-top:5px;
+    padding:2px;
+}.customgraph li:hover
+{
+    background-color: aquamarine;
+    
+}
