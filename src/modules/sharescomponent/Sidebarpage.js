@@ -37,7 +37,7 @@ function Sidebarpage() {
                 <Link to="propspage" className="nav-link link-body-emphasis">Props</Link>
                 </li>
                 <li>
-                    <a href="#" className="nav-link link-body-emphasis">Orders</a>
+                <Link to="reduxpage" className="nav-link link-body-emphasis">Redux</Link>
                 </li>
                 <li>
                     <a href="#" className="nav-link link-body-emphasis">Orders</a>

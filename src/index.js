@@ -15,6 +15,9 @@ import Apidatapge from './modules/students/stdentdashboard/pages/Apidatapge';
 import Productdetailspage from './modules/students/stdentdashboard/pages/Productdetailspage';
 import Chartspage from './modules/students/stdentdashboard/pages/Chartspage';
 import StudentParentpage from './modules/students/stdentdashboard/pages/StudentParentpage';
+import { Provider } from 'react-redux';
+import { mystorage } from './modules/students/stdentdashboard/pages/reduxpage/Mystore';
+import Reduxpageview from './modules/students/stdentdashboard/pages/reduxpage/Reduxpageview';
 
 
 
@@ -24,6 +27,7 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
+    <Provider store={mystorage}>
       <Routes>
         <Route path='' element={<Appmainpage />}></Route>
         <Route path='students' element={<Studentmasterpage />}>
@@ -34,14 +38,14 @@ root.render(
             <Route path='apidata/productdetails/:id' element={<Productdetailspage/>}></Route>
             <Route path='graph' element={<Chartspage />}></Route>
             <Route path='propspage' element={<StudentParentpage />}></Route>
+            <Route path='reduxpage' element={<Reduxpageview/>}></Route>
             <Route path='*' element={<Errorpage />}></Route>
           </Route>
           <Route path='*' element={<Errorpage />}></Route>
         </Route>
         <Route path='*' element={<Errorpage />}></Route>
-
-
       </Routes>
+      </Provider>
 
     </BrowserRouter>
 
