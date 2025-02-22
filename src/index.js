@@ -18,6 +18,7 @@ import StudentParentpage from './modules/students/stdentdashboard/pages/StudentP
 import { Provider } from 'react-redux';
 import { mystorage } from './modules/students/stdentdashboard/pages/reduxpage/Mystore';
 import Reduxpageview from './modules/students/stdentdashboard/pages/reduxpage/Reduxpageview';
+import Authpagelogin from './modules/students/auth/Authpagelogin';
 
 
 
@@ -32,6 +33,7 @@ root.render(
         <Route path='' element={<Appmainpage />}></Route>
         <Route path='students' element={<Studentmasterpage />}>
           <Route path='' element={<Studentloginpage />}></Route>
+          {/* <Route path='' element={<Authpagelogin/>}/> */}
           <Route path='dashboard' element={<Studentmainpage />}>
             <Route path='' element={<StudentProfile />}></Route>
             <Route path='apidata' element={<Apidatapge />}></Route>

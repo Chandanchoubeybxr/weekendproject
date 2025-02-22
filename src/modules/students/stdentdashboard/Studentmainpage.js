@@ -2,7 +2,8 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
 import StudentProfile from './pages/StudentProfile'
-import Sidebarpage from '../../sharescomponent/Sidebarpage'
+import Sidebarpage from '../../sharescomponent/Sidebarpage';
+
 
 function Studentmainpage() {
   return (

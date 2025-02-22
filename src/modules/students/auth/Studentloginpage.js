@@ -1,5 +1,7 @@
 import React, { Fragment, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import { ToastContainer, toast } from 'react-toastify';
+import Authpagelogin from './Authpagelogin';
 
 
 function Studentloginpage() {
@@ -25,7 +27,7 @@ function Studentloginpage() {
   const myloginpage = () => {
     console.log(loginpage);
     if (loginpage.email === "" || loginpage.password === "") {
-      alert("wrong");
+      toast.error("wrong",{position: "top-left",theme: "dark",autoClose: 2000});
     }
     else {
       alert("wecome to dashboard");
@@ -44,6 +46,7 @@ function Studentloginpage() {
 
   return (
     <Fragment>
+      <ToastContainer></ToastContainer>
       <div className='container '>
         <div className='row justify-content-center'>
           <div className='col-md-6 shadow p-5'>
@@ -64,6 +67,12 @@ function Studentloginpage() {
                 <div className='col-md-12 text-end'>
                   <div className="mb-3">
                     <button className='btn btn-success' onClick={myloginpage}> Login</button>
+                  </div>
+                </div>
+                <div className='col-md-12'>
+                  <div className="mb-3">
+                  
+                  <Authpagelogin></Authpagelogin>
                   </div>
                 </div>
               </div>
