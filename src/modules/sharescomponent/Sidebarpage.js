@@ -40,7 +40,7 @@ function Sidebarpage() {
                 <Link to="reduxpage" className="nav-link link-body-emphasis">Redux</Link>
                 </li>
                 <li>
-                    <a href="#" className="nav-link link-body-emphasis">Orders</a>
+                <Link to="lazypage" className="nav-link link-body-emphasis">lazyloading</Link>
                 </li>
                 <li>
                     <a href="#" className="nav-link link-body-emphasis">Orders</a>

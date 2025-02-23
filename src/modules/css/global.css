@@ -77,3 +77,11 @@
     background-color: aquamarine;
     
 }
+.myloader
+{
+    font-size: 80px;
+    color:white;
+    background-color: red;
+    padding:50px;
+    box-sizing: border-box;
+}

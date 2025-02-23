@@ -1,4 +1,5 @@
 import React from 'react';
+import { lazy,Suspense } from 'react';
 import ReactDOM from 'react-dom/client';
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.js";
@@ -19,6 +20,8 @@ import { Provider } from 'react-redux';
 import { mystorage } from './modules/students/stdentdashboard/pages/reduxpage/Mystore';
 import Reduxpageview from './modules/students/stdentdashboard/pages/reduxpage/Reduxpageview';
 import Authpagelogin from './modules/students/auth/Authpagelogin';
+// import ReactLasypage from './modules/students/stdentdashboard/pages/ReactLasypage';
+const ReactLasypage = lazy(()=>import('./modules/students/stdentdashboard/pages/ReactLasypage'));
 
 
 
@@ -41,6 +44,9 @@ root.render(
             <Route path='graph' element={<Chartspage />}></Route>
             <Route path='propspage' element={<StudentParentpage />}></Route>
             <Route path='reduxpage' element={<Reduxpageview/>}></Route>
+            <Route path='lazypage' element={<Suspense fallback={<h1 className='myloader'>Loading Page</h1>}>
+              <ReactLasypage/>
+            </Suspense>}></Route>
             <Route path='*' element={<Errorpage />}></Route>
           </Route>
           <Route path='*' element={<Errorpage />}></Route>
